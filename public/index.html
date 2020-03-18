@@ -18,18 +18,11 @@
                 return response.json();
             }).then(function (data) {
                 console.log('Retorno:', data);
-                console.log(data.length);
-
-                var tresd = data[data.length - 1] ;
-                console.log(tresd);
-
-                var ultt = tresd.element["media"]
-                ultt.substring(0,2)
 
                 data.forEach(element => {
 
 
-                    porcentagemBaixo = element["media"] / 1200
+                    porcentagemBaixo = element["media"] / 1100
                     porcentagemCima = 100 - porcentagemBaixo
 
                     console.log(porcentagemBaixo);
@@ -37,8 +30,8 @@
 
                     document.getElementById("corpog").innerHTML += `<div class="col">
                         <div style="height: ${porcentagemCima}%;" class="barrabranca"></div>
-                        <span style="font-size: 12px;">R$${element["media"]}</span>
-                <div style="height: ${porcentagemBaixo}%;" class="cor">${element["ano"]}</div>
+                        <span  style=";font-size: 12px;">R$${element["media"]}</span>
+                <div title="R$${element["media"]}" style="height: ${porcentagemBaixo}%;" class="cor">${element["ano"]}</div>
             </div>`;
                 });
             });
@@ -61,7 +54,7 @@
         }
 
         .cor {
-            background-color: rgb(0, 255, 213);
+            background-color: rgb(0, 253, 135);
             width: 100%;
             max-width: 100%;
             text-align: center;
